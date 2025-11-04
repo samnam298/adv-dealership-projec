@@ -4,10 +4,19 @@ import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 
+/**
+ * Handles writing contract information (sales and leases)
+ * to the contracts.csv file.
+ */
 public class ContractFileManager {
 
     private static final String FILE_NAME = "contracts.csv";
 
+    /**
+     * Appends a contract to the contracts.csv file.
+     * The output format depends on whether the contract
+     * is a sale or a lease.
+     */
     public void saveContract(Contract contract) {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(FILE_NAME, true))) {
 
@@ -55,6 +64,7 @@ public class ContractFileManager {
             writer.newLine();
 
         } catch (IOException e) {
+            // intentionally left blank (no error handling required)
         }
     }
 }
