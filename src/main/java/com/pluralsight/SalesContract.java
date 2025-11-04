@@ -26,7 +26,6 @@ public class SalesContract extends Contract {
     public boolean isFinanced() {
         return isFinanced;
     }
-
     @Override
     public double getTotalPrice() {
         Vehicle v = getVehicleSold();

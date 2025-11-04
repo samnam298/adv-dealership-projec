@@ -1,5 +1,4 @@
 package com.pluralsight;
-
 import java.io.*;
 import java.util.ArrayList;
 

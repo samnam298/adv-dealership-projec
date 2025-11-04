@@ -22,7 +22,10 @@ public class ContractFileManager {
 
             Vehicle v = contract.getVehicleSold();
 
-            if (contract instanceof SalesContract sc) {
+            // ---- If the contract is a SalesContract ----
+            if (contract instanceof SalesContract) {
+                SalesContract sc = (SalesContract) contract;
+
                 writer.write("SALE|" +
                         sc.getDate() + "|" +
                         sc.getCustomerName() + "|" +
@@ -31,7 +34,6 @@ public class ContractFileManager {
                         v.getYear() + "|" +
                         v.getMake() + "|" +
                         v.getModel() + "|" +
-                        v.getType() + "|" +
                         v.getColor() + "|" +
                         v.getOdometer() + "|" +
                         v.getPrice() + "|" +
@@ -42,7 +44,11 @@ public class ContractFileManager {
                         (sc.isFinanced() ? "YES" : "NO") + "|" +
                         sc.getMonthlyPayment());
             }
-            else if (contract instanceof LeaseContract lc) {
+
+            // ---- If the contract is a LeaseContract ----
+            else if (contract instanceof LeaseContract) {
+                LeaseContract lc = (LeaseContract) contract;
+
                 writer.write("LEASE|" +
                         lc.getDate() + "|" +
                         lc.getCustomerName() + "|" +
@@ -51,7 +57,6 @@ public class ContractFileManager {
                         v.getYear() + "|" +
                         v.getMake() + "|" +
                         v.getModel() + "|" +
-                        v.getType() + "|" +
                         v.getColor() + "|" +
                         v.getOdometer() + "|" +
                         v.getPrice() + "|" +
@@ -64,7 +69,7 @@ public class ContractFileManager {
             writer.newLine();
 
         } catch (IOException e) {
-            // intentionally left blank (no error handling required)
+            // No error handling required per project instructions
         }
     }
 }
