@@ -1,5 +1,5 @@
+// Commit 5
 package com.pluralsight;
-
 public abstract class Contract {
 
     private String date;
@@ -15,10 +15,18 @@ public abstract class Contract {
     }
 
     public String getDate() { return date; }
-    public String getCustomerName() { return customerName; }
-    public String getCustomerEmail() { return customerEmail; }
-    public Vehicle getVehicleSold() { return vehicleSold; }
+    public void setDate(String date) { this.date = date; }
 
+    public String getCustomerName() { return customerName; }
+    public void setCustomerName(String customerName) { this.customerName = customerName; }
+
+    public String getCustomerEmail() { return customerEmail; }
+    public void setCustomerEmail(String customerEmail) { this.customerEmail = customerEmail; }
+
+    public Vehicle getVehicleSold() { return vehicleSold; }
+    public void setVehicleSold(Vehicle vehicleSold) { this.vehicleSold = vehicleSold; }
+
+    // Abstract methods for subclasses
     public abstract double getTotalPrice();
     public abstract double getMonthlyPayment();
 }
